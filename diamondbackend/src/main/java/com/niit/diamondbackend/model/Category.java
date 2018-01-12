@@ -3,6 +3,7 @@ package com.niit.diamondbackend.model;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,7 +21,7 @@ public class Category
 	private int cid;
 	private String cname;
 	private String cdescription;
-	@OneToMany(targetEntity=Product.class,mappedBy="category")
+	@OneToMany(targetEntity=Product.class,mappedBy="category",fetch=FetchType.LAZY)
 	private Set<Product> product;
 	
 	public Set<Product> getProduct() {

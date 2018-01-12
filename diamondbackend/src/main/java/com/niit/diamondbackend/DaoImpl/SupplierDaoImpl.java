@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.diamondbackend.Dao.SupplierDao;
+import com.niit.diamondbackend.model.Category;
 import com.niit.diamondbackend.model.Supplier;
 
 @Repository
@@ -42,12 +43,21 @@ public class SupplierDaoImpl implements SupplierDao
 	}
 
 	public void updateSupplier(Supplier s) {
-		// TODO Auto-generated method stub
+		Session s1=sf.openSession();
+		 s1.beginTransaction();
+		s1.update(s);
+		s1.flush();
+		s1.getTransaction().commit();
+		s1.close();
 		
 	}
 
 	public void deletSupplier(Supplier s) {
-		// TODO Auto-generated method stub
+		Session s1=sf.openSession();
+		s1.beginTransaction();
+		s1.delete(s);
+		s1.getTransaction().commit();
+		s1.close();
 		
 	}
 
@@ -56,10 +66,6 @@ public class SupplierDaoImpl implements SupplierDao
 		Session s1=sf.openSession();
 		
 		List<Supplier> slist=s1.createQuery("from Supplier").list();
-		
-		
-	
-		
 		return slist;
 		
 		
@@ -68,8 +74,12 @@ public class SupplierDaoImpl implements SupplierDao
 	}
 
 	public Supplier getSupplier(int sid) {
-		// TODO Auto-generated method stub
-		return null;
+
+         Session s1=sf.openSession();
+		
+		Supplier s=(Supplier)s1.get(Supplier.class, sid);
+	
+		return s;
 	}
 	
 }

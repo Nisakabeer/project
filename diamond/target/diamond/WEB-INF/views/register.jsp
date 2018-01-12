@@ -4,6 +4,11 @@
 <html>
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <style>
+body {
+    background-image: url("./resources/b2.jpg");
+}
+</style>
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
@@ -16,8 +21,8 @@
 <legend><center><h2><b>Registration Form</b></h2></center></legend><br>
 
 <!-- Text input-->
-
-<div class="form-group">${msg}
+<div class="container">
+<div class="form-group">
   <label class="col-md-4 control-label">Name</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
@@ -103,7 +108,7 @@
 
 </fieldset>
 </form>
-</div>
+
     </div><!-- /.container -->
     <jsp:include page="footer.jsp"></jsp:include>
 </body>
