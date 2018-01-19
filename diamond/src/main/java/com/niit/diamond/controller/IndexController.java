@@ -71,6 +71,13 @@ public class IndexController
 		return "login";
 	}
 
+	@RequestMapping("/error")
+    String error()
+	{
+		
+		return "error";
+	}
+
 
 	@RequestMapping("/register")
     String register()

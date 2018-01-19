@@ -15,6 +15,7 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 
 import com.niit.diamondbackend.model.Cart;
 import com.niit.diamondbackend.model.Category;
+import com.niit.diamondbackend.model.Order;
 import com.niit.diamondbackend.model.Product;
 import com.niit.diamondbackend.model.Supplier;
 import com.niit.diamondbackend.model.User;
@@ -36,7 +37,7 @@ public class HibernateConfig
 	        sessionBuilder.addAnnotatedClass(Supplier.class);
 	        sessionBuilder.addAnnotatedClass(Product.class);
 	        sessionBuilder.addAnnotatedClass(Cart.class);
-	        /* sessionBuilder.addAnnotatedClass(Orders.class);*/
+	        sessionBuilder.addAnnotatedClass(Order.class);
 	        
 
 	        return sessionBuilder.buildSessionFactory();

@@ -75,7 +75,7 @@
     <p>
     <c:if test="${pageContext.request.userPrincipal.name != null && pageContext.request.userPrincipal.name  != 'admin123@gmail.com'}">
     <button type="button" class="btn btn-default btn-sm">
-    <span class="glyphicon glyphicon-shopping-cart"></span> <a href="shoppingcart" >Shopping Cart</a>
+    <span class="glyphicon glyphicon-shopping-cart"></span> <a href="${pageContext.request.contextPath}/user/Cart?cmsg=" >Shopping Cart</a>
     </button>
     </c:if>
     </p>

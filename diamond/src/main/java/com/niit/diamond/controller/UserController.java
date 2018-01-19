@@ -25,7 +25,7 @@ public class UserController
 		u.setPhoneno(contactno);
 		u.setMail(email);
 		u.setPassword(password);
-		u.setRole("USER_ROLE");
+		u.setRole("ROLE_USER");
 		
 		udao.saveUser(u);
 		

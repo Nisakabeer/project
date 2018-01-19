@@ -92,11 +92,12 @@ public class ProductController
 	 
 	
 	 @RequestMapping(value="/productdetails")
-	 String productdet(@RequestParam("id")int id,Model m)
+	 String productdet(@RequestParam("id")int id,@RequestParam("cmsg")String msg,Model m)
 	 {
 		 
 		 Product p=pdao.getProduct(id);
 	     m.addAttribute("p",p);
+	     m.addAttribute("cmsg", msg);
 	     return "productdetails";
 	 	
 

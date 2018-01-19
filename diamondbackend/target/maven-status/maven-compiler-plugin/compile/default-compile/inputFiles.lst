@@ -3,8 +3,10 @@ E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\DaoImpl\Supp
 E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\model\User.java
 E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\model\Cart.java
 E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\Dao\ProductDao.java
+E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\model\Order.java
 E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\Dao\CartDao.java
 E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\Dao\CategoryDao.java
+E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\Dao\OrderDao.java
 E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\Dao\SupplierDao.java
 E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\model\Product.java
 E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\DaoImpl\UserDaoImpl.java
@@ -13,5 +15,6 @@ E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\DaoImpl\Prod
 E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\model\Category.java
 E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\App.java
 E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\config\HibernateConfig.java
+E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\DaoImpl\OrderDaoImpl.java
 E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\model\Supplier.java
 E:\niitproject\diamondbackend\src\main\java\com\niit\diamondbackend\DaoImpl\CartDaoImpl.java

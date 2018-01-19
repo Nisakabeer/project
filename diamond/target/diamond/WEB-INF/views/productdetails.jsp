@@ -272,7 +272,7 @@ button:hover {
       <h1>${p.pname}</h1><br><br>
       <h1>${p.description}</h1>
       
-      
+      <h2>${cmsg }</h2>
          
       <div class="important">
         <p id="pricing">Price</p>
@@ -283,6 +283,8 @@ button:hover {
         <h1 id="stock">${p.stock}</h1>
         
       </div>
+      <form action="${pageContext.request.contextPath}/user/addcart" method="POST">
+      
       <div class="form">
       <p id="coloring">QUANTITY</p>
       
@@ -300,8 +302,8 @@ button:hover {
         </select>
       </div> -->
       <br><br><br><br><br><br><br><br><br><br><br><br>
-      <a href="shoppingcart"><button>Add to cart</button></a>
-      
+      <button type="submit">Add to cart</button>
+      </form>
     </div>
     
   </div>

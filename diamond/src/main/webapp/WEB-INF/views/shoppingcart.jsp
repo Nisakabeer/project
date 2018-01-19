@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -45,6 +46,8 @@
 <jsp:include page="header.jsp"></jsp:include>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
+<h1>${cmsg }</h1>
+
 	<table id="cart" class="table table-hover table-condensed">
     				<thead>
 						<tr>
@@ -56,36 +59,46 @@
 						</tr>
 					</thead>
 					<tbody>
+				
+					<c:set var="sum" value="0" />
+					 <c:forEach var = "ct" items="${calist }">
 						<tr>
 							<td data-th="Product">
 								<div class="row">
-									<div class="col-sm-2 hidden-xs"><img src="./resources/1.jpg" alt="..." class="img-responsive"/></div>
+									<div class="col-sm-2 hidden-xs"><img src="${pageContext.request.contextPath}/resources/images/${ct.product.pid}.jpg" alt="..." class="img-responsive"/></div>
 									<div class="col-sm-10">
-										<h4 class="nomargin">Ring</h4>
-										<p>AVNNI BY NAKSHATRA DIAMOND RING QAR2183.</p>
+										<h4 class="nomargin">${ct.product.pname}</h4>
+										<p>${ct.product.description }</p>
 									</div>
 								</div>
 							</td>
-							<td data-th="Price">30k</td>
+							<td data-th="Price">${ct.product.price }</td>
+							<form action="updatecart" method="post">
+                           <input type="hidden" name="cid" value="${ct.cartid}"/>
 							<td data-th="Quantity">
-								<input type="number" class="form-control text-center" value="1" min="1">
+								<input type="number" class="form-control text-center" value="${ct.cartqnty }" min="1" name="qty">
 							</td>
-							<td data-th="Subtotal" class="text-center">30k</td>
-							<td class="actions" data-th="">
-								<button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
+							<td data-th="Subtotal" class="text-center">${ct.product.price*ct.cartqnty}</td>
+							<td class="actions" data-th="">  
+							
+							<c:set var="sum" value="${sum+ (ct.product.price*ct.cartqnty)}"/>
+								<button type="submit" class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button></form>
+								<a href="deletecart?id=${ct.cartid }"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>	</a>
+										
 							</td>
+							
 						</tr>
+						</c:forEach>
 					</tbody>
 					<tfoot>
 						<tr class="visible-xs">
-							<td class="text-center"><strong>Total 30k</strong></td>
+							<td class="text-center"><strong>Total ${sum }</strong></td>
 						</tr>
 						<tr>
-							<td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+							<td><a href="./" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
 							<td colspan="2" class="hidden-xs"></td>
-							<td class="hidden-xs text-center"><strong>Total 30k</strong></td>
-							<td><a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+							<td class="hidden-xs text-center"><strong>Total ${sum }</strong></td>
+							<td><a href="${pageContext.request.contextPath}/user/shipping" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
 						</tr>
 					</tfoot>
 				</table>

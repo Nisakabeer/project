@@ -1,7 +1,10 @@
 package com.niit.diamondbackend.model;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +18,16 @@ public class User
 	private String password;
 	private long phoneno;
 	private String address;
+	
+	@OneToMany(targetEntity=Cart.class,mappedBy="user")
+	private Set<Cart> cart;
+	
+	public Set<Cart> getCart() {
+		return cart;
+	}
+	public void setCart(Set<Cart> cart) {
+		this.cart = cart;
+	}
 	public String getAddress() {
 		return address;
 	}

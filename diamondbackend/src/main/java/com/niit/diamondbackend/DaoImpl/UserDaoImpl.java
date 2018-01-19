@@ -35,8 +35,9 @@ public class UserDaoImpl implements UserDao
 	}
 
 	public User getUser(String mail) {
-		// TODO Auto-generated method stub
-		return null;
+		Session s=sf.openSession();
+		User u=(User)s.get(User.class, mail);
+		return u;
 	}
       
 }

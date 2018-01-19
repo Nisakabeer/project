@@ -1,11 +1,14 @@
 package com.niit.diamondbackend.model;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +23,16 @@ public class Product
 	private double price;
 	private int stock;
 	
+	
+	@OneToMany(targetEntity=Cart.class,mappedBy="product")
+	private Set<Cart> cart;
+	
+	public Set<Cart> getCart() {
+		return cart;
+	}
+	public void setCart(Set<Cart> cart) {
+		this.cart = cart;
+	}
 	@ManyToOne
 	@JoinColumn(name="S_ID")
 	private Supplier supplier;

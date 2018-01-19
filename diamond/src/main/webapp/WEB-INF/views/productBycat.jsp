@@ -17,7 +17,7 @@
     
   <div class="col-xs-3"  >
     <div class="thumbnail" >
-      <a href="productdetails?id=${p.pid }">
+      <a href="productdetails?id=${p.pid }&cmsg=">
         <img src="${pageContext.request.contextPath}/resources/images/${p.pid}.jpg" >
         <div class="caption">
         
